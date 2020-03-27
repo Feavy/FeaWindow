@@ -30,16 +30,19 @@ public class FeaWindow {
         this.frame.setContentPane(this.contentPane);
     }
 
-    public void startGroupColumn() {
+    public void newColumnGroup() {
         JPanel newGroup = new JPanel();
         newGroup.setLayout(new BoxLayout(newGroup, BoxLayout.Y_AXIS));
+        //newGroup.setLayout(new GridLayout(0, 1));
         currentGroup.add(newGroup);
         currentGroup = newGroup;
     }
 
-    public void startGroupLine() {
+    public void newLineGroup() {
         JPanel newGroup = new JPanel();
         newGroup.setLayout(new BoxLayout(newGroup, BoxLayout.X_AXIS));
+        //newGroup.setLayout(new GridLayout(1, 0));
+
         currentGroup.add(newGroup);
         currentGroup = newGroup;
     }
@@ -48,7 +51,7 @@ public class FeaWindow {
 
     }
 
-    public StringData add(String text) {
+    public StringData label(String text) {
         JLabel label = new JLabel(text);
         currentGroup.add(label);
         StringData data = new StringData(dataList.size(), label, text, label::setText);
@@ -62,8 +65,8 @@ public class FeaWindow {
      * @param value   Value of this textfield
      * @param caption Label of this textfield
      */
-    public StringData add(String value, String caption) {
-        return add(value, caption, true, false, null);
+    public StringData textfield(String value, String caption) {
+        return textfield(value, caption, true, false, null);
     }
 
     /**
@@ -73,8 +76,8 @@ public class FeaWindow {
      * @param caption  Label of this textfield
      * @param editable Is textfield editable ? Default : True
      */
-    public StringData add(String value, String caption, boolean editable) {
-        return add(value, caption, editable, false, null);
+    public StringData textfield(String value, String caption, boolean editable) {
+        return textfield(value, caption, editable, false, null);
     }
 
     /**
@@ -84,19 +87,8 @@ public class FeaWindow {
      * @param caption  Label of this textfield
      * @param editable Is textfield editable ? Default : True
      */
-    public StringData add(String value, String caption, boolean editable, Consumer<String> onEdit) {
-        return add(value, caption, editable, false, onEdit);
-    }
-
-    /**
-     * Add a new textfield in this window
-     *
-     * @param value    Value of this textfield
-     * @param caption  Label of this textfield
-     * @param editable Is textfield editable ? Default : True
-     */
-    public StringData add(String value, String caption, boolean editable, boolean isPassword) {
-        return add(value, caption, editable, isPassword, null);
+    public StringData textfield(String value, String caption, boolean editable, Consumer<String> onEdit) {
+        return textfield(value, caption, editable, false, onEdit);
     }
 
     /**
@@ -107,11 +99,13 @@ public class FeaWindow {
      * @param editable Is textfield editable ? Default : True
      * @param onEdit   Called when textfield's value changes.
      */
-    public StringData add(String value, String caption, boolean editable, boolean isPassword, Consumer<String> onEdit) {
+    private StringData textfield(String value, String caption, boolean editable, boolean isPassword, Consumer<String> onEdit) {
         JLabel label = new JLabel(caption);
+        label.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         currentGroup.add(label);
 
         final JTextField textField = isPassword ? new JPasswordField(value, 16) : new JTextField(value, 16);
+        textField.setAlignmentX(JLabel.LEFT_ALIGNMENT);
         textField.setEditable(editable);
 
         StringData data = new StringData(dataList.size(), textField, value, textField::setText);
@@ -144,8 +138,27 @@ public class FeaWindow {
         return data;
     }
 
-    public StringData add(String buttonLabel, Runnable onClick) {
+    /**
+     * Add a new textfield in this window
+     *
+     * @param value    Value of this textfield
+     * @param caption  Label of this textfield
+     */
+    public StringData passfield(String value, String caption) {
+        return textfield(value, caption, true, true, null);
+    }
+
+    public StringData passfield(String value, String caption, boolean editable) {
+        return textfield(value, caption, editable, true, null);
+    }
+
+    public StringData passfield(String value, String caption, boolean editable, Consumer<String> onEdit) {
+        return textfield(value, caption, editable, true, onEdit);
+    }
+
+    public StringData button(String buttonLabel, Runnable onClick) {
         JButton button = new JButton(buttonLabel);
+        button.setAlignmentX(JButton.LEFT_ALIGNMENT);
         StringData data = new StringData(dataList.size(), button, buttonLabel, button::setText);
         button.addActionListener(e -> onClick.run());
         currentGroup.add(button);

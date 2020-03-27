@@ -8,11 +8,11 @@ public class Main2 {
     public static void main(String[] args) {
         FeaWindow window = new FeaWindow("Connexion");
 
-        window.startGroupLine();
-        window.add("", "Pseudo :");
-        window.add("", "Passe : ");
+        window.newLineGroup();
+        window.textfield("", "Pseudo :");
+        window.passfield("", "Passe : ");
 
-        window.add("OK", () -> {
+        window.button("OK", () -> {
 
         });
 
