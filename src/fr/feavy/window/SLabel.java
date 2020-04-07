@@ -2,7 +2,7 @@ package fr.feavy.window;
 
 import javax.swing.*;
 
-public class SLabel {
+public class SLabel implements Component<String, JLabel>{
     private JLabel label;
 
     public SLabel(JPanel panel, String label) {
@@ -16,5 +16,10 @@ public class SLabel {
 
     public void value(String value) {
         label.setText(value);
+    }
+
+    @Override
+    public JLabel component() {
+        return label;
     }
 }

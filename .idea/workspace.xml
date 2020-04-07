@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59ada9d8-da0f-4f51-be52-361fcedfb56a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/Component.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/SButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/SFileChooser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/SFilesChooser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/SLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/SPassField.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fr/feavy/window/STextField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/FeaData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/FeaWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/feavy/window/SimpleFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/StringData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/TextFieldAdder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/SLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/feavy/window/SLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/feavy/window/STextField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/feavy/window/STextField.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,8 +78,16 @@
       <workItem from="1585267693259" duration="1662000" />
       <workItem from="1585309445192" duration="629000" />
       <workItem from="1586255838470" duration="2975000" />
-      <workItem from="1586276022987" duration="1005000" />
+      <workItem from="1586276022987" duration="1907000" />
     </task>
+    <task id="LOCAL-00001" summary="Added builder design pattern">
+      <created>1586277146020</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586277146021</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,11 +106,19 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added builder design pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added builder design pattern" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1586258347365">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1586277312919">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586258347365" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586277312919" />
+    <state x="562" y="28" key="CommitChangelistDialog2" timestamp="1586277145309">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="562" y="28" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1586277145309" />
     <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1586277031261">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -150,6 +155,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585243995710" />
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2" timestamp="1586277148394">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="249" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586277148394" />
     <state x="636" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586276024762">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

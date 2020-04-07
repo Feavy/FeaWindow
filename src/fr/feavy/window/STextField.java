@@ -5,7 +5,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.util.function.Consumer;
 
-public class STextField {
+public class STextField implements Component<String, JTextField>{
     private JLabel captionLabel;
     private JTextField valueField;
 
@@ -57,5 +57,10 @@ public class STextField {
             }
         });
         return this;
+    }
+
+    @Override
+    public JTextField component() {
+        return valueField;
     }
 }
