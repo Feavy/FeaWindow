@@ -1,20 +1,18 @@
-import fr.feavy.window.FeaWindow;
-import fr.feavy.window.StringData;
+import fr.feavy.window.SButton;
+import fr.feavy.window.SLabel;
+import fr.feavy.window.SimpleFrame;
 
 public class Main2 {
-    private static StringData status = null;
-    private static StringData button = null;
+    private static SLabel status = null;
+    private static SButton button = null;
 
     public static void main(String[] args) {
-        FeaWindow window = new FeaWindow("Connexion");
+        SimpleFrame window = new SimpleFrame("Connexion");
 
         window.newLineGroup();
-        window.textfield("", "Pseudo :");
-        window.passfield("", "Passe : ");
-
-        window.button("OK", () -> {
-
-        });
+        window.textfield("Pseudo :");
+        window.passfield("Passse :");
+        window.button("OK");
 
         window.show();
     }

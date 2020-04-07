@@ -1,28 +1,32 @@
-import fr.feavy.window.FeaWindow;
-import fr.feavy.window.StringData;
+import fr.feavy.window.*;
 
 import java.io.File;
+import java.util.Optional;
 
 public class Main {
+    private static SButton button;
+    private static SLabel status;
+
     public static void main(String[] args) {
-        FeaWindow window = new FeaWindow("Connexion") {
-            private StringData button;
-            private StringData status;
-            {
-                newColumnGroup();
-                StringData pseudo = textfield("", "Pseudo : ");
-                StringData pass = passfield("", "Passe : ");
-                button = button("Connexion", () -> {
-                    if (pseudo.value().length() == 0 || pass.value().length() == 0) {
-                        status.set("Erreur : un champ est vide.");
-                        return;
-                    }
-                    status.set("Connecté avec succès !");
-                    button.component().setEnabled(false);
-                });
-                status = label("Veuillez vous connecter.");
+        SimpleFrame w = new SimpleFrame("Connexion");
+        w.newColumnGroup();
+        STextField pseudo = w.textfield("Pseudo : ");
+        SPassField pass = w.passfield("Passe : ");
+        button = w.button("Connexion").onClick(() -> {
+            if (pseudo.value().length() == 0 || pass.value().length() == 0) {
+                status.value("Erreur : un champ est vide.");
+                return;
             }
-        };
-        window.show();
+            status.value("Connecté avec succès !");
+            button.component().setEnabled(false);
+        });
+        status = w.label("Veuillez vous connecter.");
+        w.button("...").onClick(() -> {
+            Optional<File> textFile = w.fileChooser("Choisissez un fichier texte").extensions("Fichiers texte", true,"txt").value();
+            textFile.ifPresent(file -> {
+                System.out.println("Le fichier que vous avez selectionné est : "+file.getName());
+            });
+        });
+        w.show();
     }
 }
